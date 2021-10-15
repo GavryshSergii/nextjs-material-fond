@@ -15,7 +15,6 @@
     "source-map": "source-map-explorer ./build/server/static/development/pages/index.js*",
     "analyze": "cross-env ANALYZE=true next build",
     "redux-devtools": "redux-devtools --hostname=localhost --port=5000",
-    "deploy": "next build && next export && git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",

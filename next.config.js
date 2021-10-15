@@ -1,13 +1,8 @@
 const TerserPlugin = require('terser-webpack-plugin');
-const withPlugins = require('next-compose-plugins');
-const withSourceMaps = require('@zeit/next-source-maps');
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
 
 const { assetPrefix = '' } = process.env;
 
-const nextConfig = {
+module.exports = {
   poweredByHeader: false,
   distDir: 'build',
   assetPrefix,
@@ -61,4 +56,3 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([withSourceMaps, withBundleAnalyzer], nextConfig);
