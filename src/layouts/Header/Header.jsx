@@ -5,25 +5,27 @@ import Fab from '@material-ui/core/Fab';
 
 import MenuHeader from '../Menu';
 import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme) => ({
-    header: () => ({
-        position: 'relative',
-        display: 'flex',
-        alignItems: 'center',
-        padding: theme.spacing(4, 8, 3),
+    header: {
         background: theme.palette.primary.main,
         [theme.breakpoints.down('sm')]: {
-            padding: theme.spacing(2, 5),
+            padding: theme.spacing(2, 0),
         },
-    }),
+    },
+    container: {
+        display: 'flex',
+        alignItems: 'center',
+        padding: theme.spacing(4, 0, 3),
+    },
     header__column2: {
         display: 'flex',
         alignItems: 'center',
         marginLeft: 'auto',
     },
     header__button: {
-        width: 230,
+        width: 200,
         marginLeft: theme.spacing(4),
         textTransform: 'none',
         background: '#6a9d1a',
@@ -40,25 +42,26 @@ function Header(props) {
 
     return (
         <header className={classes.header}>
-            <Grid container>
-                <Grid item md={2} />
-                <Grid item md={8}>
-                    <MenuHeader/>
-                </Grid>
+            <Container disableGutters maxWidth='lg' className={classes.container}>
+                <Grid container>
+                    <Grid item md={2}/>
+                    <Grid item md={8}>
+                        <MenuHeader/>
+                    </Grid>
                     <div className={classes.header__column2}>
                         <Fab
                             href="/"
-                            target="_blank"
                             rel="noopener noreferrer"
                             variant="extended"
-                            color="secondary"
+                            color="primary"
                             component="a"
                             className={classes.header__button}
                         >
                             ДОПОМОГТИ
                         </Fab>
                     </div>
-            </Grid>
+                </Grid>
+            </Container>
         </header>
     )
         ;

@@ -8,9 +8,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display: 'flex',
     flexDirection: 'column',
-    paddingTop: 48,
-    paddingRight: theme.spacing(2),
-    paddingLeft: theme.spacing(2),
   },
 }));
 
