@@ -5,6 +5,7 @@ import OurPrograms from './OurPrograms';
 import ProjectBoard from "../ProjectBoard";
 import WhyShouldSacrifice from "./WhyShouldSacrifice";
 import CompletedProjects from "../CompletedProjects";
+import Contacts from './Contacts';
 
 
 const Landing = () => {
@@ -18,6 +19,7 @@ const Landing = () => {
             />
             <WhyShouldSacrifice/>
             <CompletedProjects title='Завершені проекти' />
+            <Contacts/>
         </div>
     );
 };

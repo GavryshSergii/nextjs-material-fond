@@ -83,7 +83,7 @@ const FirstScreen = () => {
                     <Grid item md={8} className={classes.card__container} align='center'>
                         {
                             programs.map((item) => (
-                                <div className={classes.program__card}>
+                                <div className={classes.program__card} key={item.title}>
                                     <div  className={classes.image__container}>
                                             <img className={classes.image}
                                                 src={item.image}

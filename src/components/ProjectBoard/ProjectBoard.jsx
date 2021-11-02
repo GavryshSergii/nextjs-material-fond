@@ -164,7 +164,7 @@ const FirstScreen = ({title}) => {
                         const percentСollected = (fundsRaised < needFunds) ? Math.trunc(fundsRaised / needFunds * 100) : 100;
 
                         return (
-                            <Grid item md={3} lg={4}>
+                            <Grid item md={3} lg={4} key={name}>
                                 <Card className={classes.card}>
                                     <CardActionArea className={classes.card_action}>
                                         <CardMedia

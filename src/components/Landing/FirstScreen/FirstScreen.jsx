@@ -42,6 +42,12 @@ const useStyles = makeStyles((theme) => ({
             boxShadow: `0px 3px 0px ${theme.palette.primary.dark}`,
         }
     },
+    player: {
+        height: '40vh',
+        [theme.breakpoints.down('xs')]: {
+            height: '50vw',
+        },
+    },
     image: {
         width: '100%',
     },
@@ -69,11 +75,11 @@ const FirstScreen = () => {
                             ПІДТРИМАТИ
                         </Button>
                     </Grid>
-                    <Grid item md={6} alignContent='center'>
-                        <img className={classes.image}
-                             src="images/Rectangle 86.svg"
-                             alt="Logo"
-                        />
+                    <Grid item container md={6} alignContent='center'>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/a4qgyW3KUFc?controls=1&autoplay=1"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+                                allowfullscreen/>
                     </Grid>
                 </Grid>
             </Container>

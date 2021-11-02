@@ -12,25 +12,24 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
-const CompletedButton = withStyles((theme) => ({
-    outlined: {
-        '& disabled':{
-            border: '3px solid #72776B',
-        }
-    },
-}))(Button);
+import CompletedButton from '../../ui/CompletedButton';
+
+
 
 const compledProjects = [
     {
+        idProject: 14816,
         image: 'images/defaultImage.svg',
         name: 'с. Боянчук: система водостока храма Рождества Богородицы',
         fundsRaised: 150000,
     },
     {
+        idProject: 14817,
         name: 'с. Товтри. Побудова храму',
         fundsRaised: 10000,
     },
     {
+        idProject: 14818,
         name: 'с. Боянчук: система водостока храма Рождества Богородицы',
         fundsRaised: 20000,
     },
@@ -133,10 +132,10 @@ const FirstScreen = ({title}) => {
                 </Typography>
                 <Grid container spacing={5}>
                     {compledProjects.map((item) => {
-                        const {image = 'images/defaultImage.svg', name, fundsRaised} = item;
+                        const {idProject, image = 'images/defaultImage.svg', name, fundsRaised} = item;
 
                         return (
-                            <Grid item md={3} lg={4}>
+                            <Grid item md={3} lg={4} key={'project' + idProject}>
                                 <Card className={classes.card}>
                                     <CardActionArea className={classes.card_action}>
                                         <CardMedia

@@ -1,11 +1,10 @@
 import React, {memo} from 'react';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core/styles';
-import Fab from '@material-ui/core/Fab';
 import Container from '@material-ui/core/Container';
 
 import MenuHeader from '../Menu';
-import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     footer: {
@@ -15,26 +14,26 @@ const useStyles = makeStyles((theme) => ({
             padding: theme.spacing(2, 0),
         },
     },
-    container:{
+    container: {
         display: 'flex',
         alignItems: 'center',
-        padding: theme.spacing(4, 0, 3),
+        padding: theme.spacing(4, 10, 3),
+        gap: theme.spacing(4),
     },
     footer__column2: {
+        width: 210,
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-around',
-        marginLeft: 'auto',
     },
     footer__button: {
-        width: 200,
-        marginRight: theme.spacing(3),
+        width: 170,
+        background: '#6A9D1A',
+        boxShadow: '0px 3px 0px #466F06',
+        borderRadius: '100px',
         textTransform: 'none',
-        background: '#6a9d1a',
-        [theme.breakpoints.down('sm')]: {
-            width: 200,
-            marginLeft: theme.spacing(2),
-        },
+        '&:hover': {
+            boxShadow: `0px 3px 0px ${theme.palette.primary.dark}`,
+        }
     },
 }));
 
@@ -45,34 +44,26 @@ function Footer(props) {
     return (
 
         <footer className={classes.footer}>
-            <Container disableGutters maxWidth='lg' className={classes.container}>
-                <Grid container>
+            <Container disableGutters className={classes.container}>
+                <div>
                     <div className={classes.footer__column2}>
-                        <Fab
-                            href="/"
-                            rel="noopener noreferrer"
-                            variant="extended"
-                            color="primary"
-                            component="a"
-                            className={classes.footer__button}
-                        >
+                        <Button size='large' color='primary' variant='contained'
+                                className={classes.footer__button}>
                             ДОПОМОГТИ
-                        </Fab>
+                        </Button>
                     </div>
-                    <Grid item md={8}>
-                        <MenuHeader inHeader={false}/>
-                    </Grid>
-                    <Grid item md={2} className={classes.footer__column2}>
-                        <img
-                            src="images/masterCard.svg"
-                            alt="Logo"
-                        />
-                        <img
-                            src="images/visa.svg"
-                            alt="Logo"
-                        />
-                    </Grid>
-                </Grid>
+                </div>
+                <MenuHeader inHeader={false}/>
+                <div className={classes.footer__column2}>
+                    <img
+                        src="images/masterCard.svg"
+                        alt="Logo"
+                    />
+                    <img
+                        src="images/visa.svg"
+                        alt="Logo"
+                    />
+                </div>
             </Container>
         </footer>
 

@@ -6,6 +6,7 @@ import Fab from '@material-ui/core/Fab';
 import MenuHeader from '../Menu';
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     header: {
@@ -17,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
     container: {
         display: 'flex',
         alignItems: 'center',
-        padding: theme.spacing(4, 0, 3),
+        padding: theme.spacing(4, 10, 3),
+        gap: theme.spacing(4),
     },
     header__column2: {
         display: 'flex',
@@ -25,14 +27,20 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 'auto',
     },
     header__button: {
-        width: 200,
-        marginLeft: theme.spacing(4),
+        width: 170,
         textTransform: 'none',
         background: '#6a9d1a',
+        boxShadow: '0px 3px 0px #466F06',
+        borderRadius: '100px',
+        '&:hover': {
+            boxShadow: `0px 3px 0px ${theme.palette.primary.dark}`,
+        },
         [theme.breakpoints.down('sm')]: {
             width: 200,
-            marginLeft: theme.spacing(2),
         },
+    },
+    div:{
+        width: 170,
     },
 }));
 
@@ -42,25 +50,17 @@ function Header(props) {
 
     return (
         <header className={classes.header}>
-            <Container disableGutters maxWidth='lg' className={classes.container}>
-                <Grid container>
-                    <Grid item md={2}/>
-                    <Grid item md={8}>
-                        <MenuHeader/>
-                    </Grid>
-                    <div className={classes.header__column2}>
-                        <Fab
-                            href="/"
-                            rel="noopener noreferrer"
-                            variant="extended"
-                            color="primary"
-                            component="a"
-                            className={classes.header__button}
-                        >
-                            ДОПОМОГТИ
-                        </Fab>
-                    </div>
-                </Grid>
+            <Container disableGutters className={classes.container}>
+                <div >
+                    <div className={classes.div}></div>
+                </div>
+                <MenuHeader/>
+                <div className={classes.header__column2}>
+                    <Button size='large' color='primary' variant='contained'
+                            className={classes.header__button}>
+                        ДОПОМОГТИ
+                    </Button>
+                </div>
             </Container>
         </header>
     )
