@@ -42,15 +42,6 @@ const useStyles = makeStyles((theme) => ({
             boxShadow: `0px 3px 0px ${theme.palette.primary.dark}`,
         }
     },
-    player: {
-        height: '40vh',
-        [theme.breakpoints.down('xs')]: {
-            height: '50vw',
-        },
-    },
-    image: {
-        width: '100%',
-    },
 }));
 
 const FirstScreen = () => {
@@ -76,7 +67,7 @@ const FirstScreen = () => {
                         </Button>
                     </Grid>
                     <Grid item container md={6} alignContent='center'>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/a4qgyW3KUFc?controls=1&autoplay=1"
+                        <iframe width="691" height="433" src="https://www.youtube.com/embed/a4qgyW3KUFc?controls=1&autoplay=1"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                                 allowfullscreen/>
